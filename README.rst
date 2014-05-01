@@ -1,6 +1,8 @@
 vagrant-ScientificLinux
 =======================
 
+Scripts to create a ScientificLinux minimal install Vagrant box.
+
 .. note::
 
     Forked from https://github.com/2creatives/vagrant-centos as an 
@@ -8,7 +10,9 @@ vagrant-ScientificLinux
     original in order to support our ScientificLinux environment 
     workflow.
 
-Scripts to create a ScientificLinux minimal install Vagrant box.
+
+Quickstart
+----------
 
 Run::
 
