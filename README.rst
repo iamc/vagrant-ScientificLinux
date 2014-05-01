@@ -1,10 +1,12 @@
 vagrant-ScientificLinux
 =======================
 
-Forked from https://github.com/2creatives/vagrant-centos as an 
-independent project as I plan to diverge considerably from the 
-original in order to support our ScientificLinux environment 
-workflow.
+.. note::
+
+    Forked from https://github.com/2creatives/vagrant-centos as an 
+    independent project as I plan to diverge considerably from the 
+    original in order to support our ScientificLinux environment 
+    workflow.
 
 Scripts to create a ScientificLinux minimal install Vagrant box.
 
