@@ -8,16 +8,16 @@ workflow.
 
 Scripts to create a ScientificLinux minimal install Vagrant box.
 
-Run:
+Run::
 
     ./setup
 
 and at the boot prompt press tab to gain access to the boot options.
-Add the `ks=.*` string you get from the command prompt. The rest of
+Add the ``ks=.*`` string you get from the command prompt. The rest of
 the installation is automated.
 
-Finally, run the last command that `setup` spits out (it's of the
-form `./cleanup && ...`). Congratulations! You have just created a
+Finally, run the last command that ``setup`` spits out (it's of the
+form ``./cleanup && ...``). Congratulations! You have just created a
 Vagrant box.
 
 
@@ -26,17 +26,17 @@ Specification
 
 The box is constrained to 613 MiB of memory to vaguely resemble an
 Amazon AWS micro instance. You may want to consider adjusting this
-for your needs using options like:
+for your needs using options like::
 
     config.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--memory", 2048]
         vb.customize ["modifyvm", :id, "--ioapic", "on", "--cpus", 2]
     end
 
-in your `Vagrantfile`.
+in your ``Vagrantfile``.
 
 This box has a heavy bias towards US English locales. If this
-affects you, please adjust the `ks.cfg` file accordingly. This was
+affects you, please adjust the ``ks.cfg`` file accordingly. This was
 mainly done as a space saving measure.
 
 
@@ -44,32 +44,32 @@ Additional Notes
 ----------------
 
 There is a hacky 'web server' to get the kickstart script into the
-installer which requires `netcat`. Alternatively, you could host the
-`ks.cfg` file on your own HTTP server.
+installer which requires ``netcat``. Alternatively, you could host the
+``ks.cfg`` file on your own HTTP server.
 
 Please be aware that these scripts will *not* install any special
 provisioners beyond the shell. Patches will be considered if you
 wish to contribute support for Puppet, Chef, etc.
 
 The development tools group package is also included for
-convenience. This includes things like `gcc` and `make` as well as
-VCSs like `git`, `hg`, `bzr`, etc.
+convenience. This includes things like ``gcc`` and ``make`` as well as
+VCSs like ``git``, ``hg``, ``bzr``, etc.
 
-You are encouraged to look at the file `vars.sh` to modify the
+You are encouraged to look at the file ``vars.sh`` to modify the
 configuration to best suit your needs. In particular, take note
 of the location of the ISOs (which aren't include in the git
-repository):
+repository)::
 
     INSTALLER="./isos/CentOS-6.5-x86_64-minimal.iso"
     GUESTADDITIONS="./isos/VBoxGuestAdditions-4.3.6.iso"
 
 Assumptions have been made about the location of the hard drive as
-well:
+well::
 
     HDD="${HOME}/VirtualBox VMs/${NAME}/${NAME}.vmdk"
 
 If you wished to be emailed with the various logs the build produces
-see the `ks.cfg` file and find the line:
+see the ``ks.cfg`` file and find the line::
 
     EMAIL=root
 
