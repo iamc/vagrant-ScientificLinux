@@ -1,7 +1,9 @@
-vagrant-centos
-==============
+vagrant-ScientificLinux
+=======================
 
-Scripts to create a lean CentOS Vagrant box.
+Forked from https://github.com/2creatives/vagrant-centos
+
+Scripts to create a ScientificLinux minimal install Vagrant box.
 
 Run:
 
